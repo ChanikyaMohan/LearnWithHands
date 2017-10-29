@@ -1,0 +1,25 @@
+<html>
+<!-- This Demo overlays a rigged hand on top of the existing page.  Requires a WebGL-capable browser. -->
+<head>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.min.js"></script>
+  <script src="//js.leapmotion.com/leap-0.6.4.js"></script>
+  <script src="//js.leapmotion.com/leap-plugins-0.1.10.js"></script>
+  <script type="text/javascript" src="build/leap.rigged-hand-0.1.7.js"></script>
+</head>
+<body>
+
+
+<script>
+  (window.controller = new Leap.Controller)
+    .use('riggedHand', {
+      boneLabels: function(boneMesh, leapHand) {
+        return boneMesh.name
+      }
+  })
+    .connect()
+</script>
+
+
+
+</body>
+</html>
