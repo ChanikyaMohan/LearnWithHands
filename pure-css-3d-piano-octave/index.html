@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Pure CSS 3D Piano octave</title>
-
-
-
       <link rel="stylesheet" href="css/style.css">
 
       <!-- Include Leapstrap CSS -->
       <link rel="stylesheet" href="//wilkesalex.github.io/leapstrap/dist/css/leapstrap.css" />
-      
+      <!-- Include jQuery (maybe you already do?) -->
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+      <!-- Include Leap (maybe you already do?) -->
+      <script src="//js.leapmotion.com/0.3.0-beta3/leap.js"></script>
+      <!-- Include Leapstrap JS -->
+      <script src="//wilkesalex.github.io/leapstrap/dist/js/leapstrap.js"></script>
 </head>
 
 <body>
@@ -20,21 +22,22 @@
 
 <div>
   <!-- <button type="button" class="button left" onclick="turn('left')"></button> -->
+  <!-- <a class="leap-interactive" href="#">Click me with Leap!</a> -->
     <section class="piano" id="piano">
-      <button type="button" tabindex="-1" class="key-12" onclick="playAudio('b')" title="B"></button>
-      <button type="button" tabindex="-1" class="key-1" onclick="playAudio('c')" title="C"></button>
-      <button type="button" tabindex="-1" class="key-2" onclick="playAudio('db')" title="C#/Db"></button>
-      <button type="button" tabindex="-1" class="key-3" onclick="playAudio('d')" title="D"></button>
-      <button type="button" tabindex="-1" class="key-4" onclick="playAudio('eb')" title="D#/Eb"></button>
-      <button type="button" tabindex="-1" class="key-5" onclick="playAudio('e')" title="E"></button>
-      <button type="button" tabindex="-1" class="key-6" onclick="playAudio('f')" title="F"></button>
-      <button type="button" tabindex="-1" class="key-7" onclick="playAudio('gb')" title="F#/Gb"></button>
-      <button type="button" tabindex="-1" class="key-8" onclick="playAudio('g')" title="G"></button>
-      <button type="button" tabindex="-1" class="key-9" onclick="playAudio('ab')" title="G#/Ab"></button>
-      <button type="button" tabindex="-1" class="key-10" onclick="playAudio('a')" title="A"></button>
-      <button type="button" tabindex="-1" class="key-11" onclick="playAudio('bb')" title="A#/Bb"></button>
-      <button type="button" tabindex="-1" class="key-12" onclick="playAudio('b')" title="B"></button>
-      <button type="button" tabindex="-1" class="key-1" onclick="playAudio('c')" title="C"></button>
+      <button type="button" tabindex="-1" class="key-12  leap-interactive" onclick="playAudio('b')" title="B"></button>
+      <button type="button" tabindex="-1" class="key-1  leap-interactive" onclick="playAudio('c')" title="C"></button>
+      <button type="button" tabindex="-1" class="key-2  leap-interactive" onclick="playAudio('db')" title="C#/Db"></button>
+      <button type="button" tabindex="-1" class="key-3  leap-interactive" onclick="playAudio('d')" title="D"></button>
+      <button type="button" tabindex="-1" class="key-4  leap-interactive" onclick="playAudio('eb')" title="D#/Eb"></button>
+      <button type="button" tabindex="-1" class="key-5  leap-interactive" onclick="playAudio('e')" title="E"></button>
+      <button type="button" tabindex="-1" class="key-6  leap-interactive" onclick="playAudio('f')" title="F"></button>
+      <button type="button" tabindex="-1" class="key-7  leap-interactive" onclick="playAudio('gb')" title="F#/Gb"></button>
+      <button type="button" tabindex="-1" class="key-8  leap-interactive" onclick="playAudio('g')" title="G"></button>
+      <button type="button" tabindex="-1" class="key-9  leap-interactive" onclick="playAudio('ab')" title="G#/Ab"></button>
+      <button type="button" tabindex="-1" class="key-10  leap-interactive" onclick="playAudio('a')" title="A"></button>
+      <button type="button" tabindex="-1" class="key-11  leap-interactive" onclick="playAudio('bb')" title="A#/Bb"></button>
+      <button type="button" tabindex="-1" class="key-12  leap-interactive" onclick="playAudio('b')" title="B"></button>
+      <button type="button" tabindex="-1" class="key-1  leap-interactive" onclick="playAudio('c')" title="C"></button>
     </section>
     <!-- <button type="button" class="button right" onclick="turn('right')"></button> -->
   </div>
@@ -55,10 +58,11 @@
 
 <!-- Canvas for finger overlay -->
 
-<canvas id="leap-overlay"></canvas>
-<script src="//js.leapmotion.com/0.2.0-beta1/leap.min.js"></script>
+<!-- <canvas id="leap-overlay"></canvas> -->
+<!-- <script src="//js.leapmotion.com/0.2.0-beta1/leap.min.js"></script> -->
+<script>LeapManager.init({interactiveSelector:"button",maxCursors:5});</script>
 
-<script>
+<!-- <script>
 var canvas = document.getElementById("leap-overlay");
 
 // fullscreen
@@ -125,7 +129,7 @@ var controller = Leap.loop({enableGestures: true}, function(frame){
 <style>
 html, body { width: 100%; height: 100%; margin: 0; padding: 0}
 #leap-overlay { position: fixed; top: 0; left: 0;}
-</style>
+</style> -->
 
 </body>
 </html>
