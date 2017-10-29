@@ -55,9 +55,9 @@ controller.on('frame', function(frame) {
       }
 
       //two empty fists means enter a number
-      if (reset && extendedFingers == 0) {
+      if (extendedFingers == 0) {
         send = true;
-        console.log(fingerTot.innerHTML);
+        console.log(fingerTot.innerHTML/10);
         fingerTot.innerHTML = 0;
 
         reset = false;
