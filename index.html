@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <title>Makikuna - learning tool</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +28,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Learn with hands</a>
+        <img src="img/title_crp.png" class="navbar-brand js-scroll-trigger" href="#page-top" style="width:195px;"/>
+        <!-- <a class="navbar-brand js-scroll-trigger" href="#page-top">Learn with hands</a> -->
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -64,8 +65,8 @@
         <h2 class="text-center">Learn</h2>
         <hr class="star-primary">
         <div class="row">
-          <div class="col-sm-4 portfolio-item">
-            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+          <div class="col-sm-4 portfolio-item" id="trigger-asking-questions">
+            <a class="portfolio-link" href="#mathportfolio-modal" data-toggle="modal">
               <div class="caption">
                 <div class="caption-content">
                   <i class="fa fa-calculator fa-3x"><h4>Math</h4></i>
@@ -128,6 +129,86 @@
       </div>
     </section>
 
+    <!-- Portfolio Modals -->
+    <div class="portfolio-modal modal fade" id="mathportfolio-modal" tabindex="-1" role="dialog" aria-hidden="true" style="padding:16px;">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="close-modal" id="close-modal-button" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <h4>Solve the problem</h4>
+                  <hr class="star-primary">
+                  <p>Using hand guestures solve the given problem</p>
+
+                  <section id="math_answer_section">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                          <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                          <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                          <form >
+                            <div class="row">
+                              <div class="col-lg-4">
+                                <div class="control-group">
+                                  <h2 id="num1"></h2>
+                                </div>
+                              </div>
+                              <div class="col-lg-4">
+                                <h2 id="num_operator">+</h2>
+                              </div>
+                              <div class="col-lg-4">
+                                <h2 id="num2"></h2>
+                              </div>
+                            </div>
+                            <br>
+                            <!-- Toast Section -->
+                            <div class="bootstrap-alert-section">
+                              <div class="page-alerts">
+                                  <div class="alert alert-success page-alert correct-answer" id="alert-1">
+                                      <button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                      <strong>Well done!</strong> You successfully solved the problem.
+                                  </div>
+                                  <div class="alert alert-danger page-alert wrong-answer" id="alert-4">
+                                      <button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                      <strong>Oh snap!</strong> You got it wrong. No problem, try again.
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="form-group floating-label-form-group controls">
+                                <label>Answer</label>
+                                <input class="form-control" id="math_answer" type="number" placeholder="Answer" autofocus required data-validation-required-message="Please enter proper answer.">
+                                <p class="help-block text-danger"></p>
+                              </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                              <button class="btn btn-success btn-lg " id="sendMathAnswer" style="display:none;">Send</button>
+                            </div>
+                          </form>
+
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- <button class="btn btn-success" type="button" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    Close</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- About Section -->
     <section class="success" id="about">
       <div class="container">
@@ -177,7 +258,7 @@
       </a>
     </div>
 
-    
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -191,7 +272,10 @@
     <script src="js/contact_me.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/freelancer.min.js"></script>
+    <script src="js/freelancer.js"></script>
+
+    <!-- Custom scripts for random numbers -->
+    <script src="js/randomNumbers.js"></script>
 
   </body>
 
